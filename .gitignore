@@ -102,3 +102,7 @@ dist
 
 # TernJS port file
 .tern-port
+
+#Other ignores (added by Hifumin)
+*.code-workspace
+.eslintrc.json

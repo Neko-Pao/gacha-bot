@@ -1,0 +1,37 @@
+{
+  "name": "gacha-bot",
+  "version": "0.0.1",
+  "description": "A gacha bot created as an alternative to Mudae.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "deploy": "node deploy-commands.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hifumindesu/gacha-bot.git"
+  },
+  "keywords": [
+    "gacha",
+    "bot",
+    "discord",
+    "javascript"
+  ],
+  "author": "Hifumin#5519",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Hifumindesu/gacha-bot/issues"
+  },
+  "homepage": "https://github.com/Hifumindesu/gacha-bot#readme",
+  "dependencies": {
+    "@discordjs/builders": "^0.6.0",
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "discord-api-types": "^0.23.1",
+    "discord.js": "^13.1.0",
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0"
+  }
+}
