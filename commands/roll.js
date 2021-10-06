@@ -1,6 +1,7 @@
 // Start a roll session
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
+const { getPreference } = require('../info/preferences.js');
 
 const embed = new MessageEmbed()
 	.setColor('#000000')
@@ -30,9 +31,13 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('roll')
 		.setDescription('Start a roll session.'),
+
 	async execute(interaction) {
 
 		const avatar = interaction.user.avatarURL();
+
+		const gender = getPreference('gender');
+		const source = getPreference('source');
 
 		row.addComponents(
 			startButton,
@@ -41,7 +46,12 @@ module.exports = {
 		);
 
 		embed.setTitle(`${ interaction.user.username }'s roll session`)
-			.setFooter(`${ interaction.user.tag }`, avatar);
+			.setFooter(`${ interaction.user.tag }`, avatar)
+			.addFields(
+				{ name: 'Roll Settings', value: 'Press the Settings button to edit' },
+				{ name: 'Gender', value: `${ gender }`, inline: true },
+				{ name: 'Source', value: `${ source }`, inline: true },
+			);
 
 		try {
 			interaction.reply({
