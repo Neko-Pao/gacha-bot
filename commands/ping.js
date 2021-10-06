@@ -5,6 +5,7 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('ping')
 		.setDescription('Checks the bot\'s ping.'),
+
 	async execute(interaction) {
 		try {
 			const sent = await interaction.reply({ content: 'Pinging...', fetchReply: true });
